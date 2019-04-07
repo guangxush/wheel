@@ -4,6 +4,8 @@
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("hello");
+        JSON jsonUtil = new JSONImpl();
+        String jsonRes = jsonUtil.stringfy("hello");
+        System.out.println(jsonRes);
     }
 }
