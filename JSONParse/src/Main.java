@@ -7,7 +7,7 @@ import java.util.Map;
  */
 public class Main {
     public static void main(String[] args) {
-        JSONImpl jsonParse = new JSONImpl();
+        JSON jsonParse = new JSONImpl();
         String jsonV0_0 = "{\n" +
                 "  \"key\":\"value\",\n" +
                 "  \"value\":12e5,\n" +
