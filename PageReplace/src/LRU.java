@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
 /**
- * 最佳置换算法
+ * LRU最近最久未使用算法
  * @author: guangxush
  * @create: 2019/04/16
  */

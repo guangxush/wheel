@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * 先进先出页面置换算法
+ * FIFO先进先出页面置换算法
  *
  * @author: guangxush
  * @create: 2019/04/16
