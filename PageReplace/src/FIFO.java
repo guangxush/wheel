@@ -8,9 +8,16 @@ import java.util.Queue;
  * @create: 2019/04/16
  */
 public class FIFO {
+
     private final Queue<Integer> queue = new LinkedList<>();
     private final int[] array;
+    /**
+     * 记录缺页次数
+     */
     private static int count = 0;
+    /**
+     * 页框大小
+     */
     private int page_size;
 
     public FIFO(int page_size, int[] array) {
@@ -18,6 +25,11 @@ public class FIFO {
         this.array = array;
     }
 
+    /**
+     * FIFO页面置换算法
+     *
+     * @return
+     */
     public int fifoPageReplace() {
         if (page_size <= 0 || array == null || array.length == 0) {
             throw new IllegalArgumentException("The parameter is invalid!");
@@ -27,7 +39,7 @@ public class FIFO {
             if (queue.contains(element)) {
                 System.out.println(queue.toString());
             }
-            //页面大小未达到指定的值
+            //页面大小未达到页框数目，直接放入元素
             else if (queue.size() < page_size) {
                 queue.offer(element);
                 System.out.println(queue.toString());

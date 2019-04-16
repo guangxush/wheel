@@ -7,7 +7,8 @@ public class LRUNode {
     Object value;
     LRUNode prev;
     LRUNode next;
-    public LRUNode(Integer key, Object value){
+
+    public LRUNode(Integer key, Object value) {
         this.key = key;
         this.value = value;
     }
