@@ -1,0 +1,111 @@
+package com.shgx.order.model;
+
+import com.shgx.order.enums.StatusEnum;
+import com.shgx.order.enums.ScoreEnum;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
+import javax.persistence.*;
+import java.util.Date;
+
+/**
+ * @author: guangxush
+ * @create: 2019/01/19
+ */
+@Entity
+@Data
+@Builder
+@AllArgsConstructor
+@Table(name = "comment")
+public class Comment {
+    /**
+     * 主键自增id
+     */
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    /**
+     * 客户id
+     */
+    @Column(name = "customer_id")
+    private Long customerId;
+
+    /**
+     * 卖家id
+     */
+    @Column(name = "seller_id")
+    private Long sellerId;
+
+    /**
+     * 外卖员id
+     */
+    @Column(name = "deliver_id")
+    private Long deliverId;
+
+    /**
+     * 食品id
+     */
+    @Column(name = "food_id")
+    private Long foodId;
+
+    /**
+     * 对商品的评论内容
+     */
+    @Column(name = "food_comment")
+    private String foodComment;
+
+    /**
+     * 对卖家的评论内容
+     */
+    @Column(name = "seller_comment")
+    private String sellerComment;
+
+    /**
+     * 对外卖员的评论内容
+     */
+    @Column(name = "deliver_comment")
+    private String deliverComment;
+
+    /**
+     * 商品评分
+     */
+    @Column(name = "food_score")
+    @Convert(converter = ScoreEnum.Converter.class)
+    private ScoreEnum foodScore;
+
+    /**
+     * 外卖员评分
+     */
+    @Column(name = "deliver_score")
+    @Convert(converter = ScoreEnum.Converter.class)
+    private ScoreEnum deliverScore;
+
+    /**
+     * 卖家评分
+     */
+    @Column(name = "seller_score")
+    @Convert(converter = ScoreEnum.Converter.class)
+    private ScoreEnum sellerScore;
+
+    /**
+     * 评分时间
+     */
+    @Column(name = "comment_date")
+    private Date commentDate;
+
+    /**
+     * 是否匿名
+     */
+    @Column(name = "named")
+    @Convert(converter = StatusEnum.Converter.class)
+    private StatusEnum named;
+
+    /**
+     * 是否删除
+     */
+    @Column(name = "deleted")
+    @Convert(converter = StatusEnum.Converter.class)
+    private StatusEnum deleted;
+}
