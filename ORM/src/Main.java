@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
-        Path relative = Paths.get("files", "takeout.sql");
+        Path relative = Paths.get("/Users/guangxush/IDEA/wheel/ORM/src/files/takeout.sql");
         File file = relative.toFile();
         List<String> rawData = new ArrayList<>();
         try {

@@ -36,7 +36,7 @@ public class Sql2Pojo {
      * @return
      */
     public static String match(String line){
-        String[] words = line.trim().split("\t");
+        String[] words = line.trim().split(" ");
         String result = null;
         switch (words[0]){
             case "--":{
@@ -92,8 +92,8 @@ public class Sql2Pojo {
         if(qualifiers==null){
             return result;
         }
-
-        qualifiers = qualifiers.substring(0, qualifiers.indexOf('('));
+        int index = (qualifiers.indexOf('(')!=-1?qualifiers.indexOf('('):qualifiers.length()-1);
+        qualifiers = qualifiers.substring(0, index);
         switch (qualifiers){
             case "bigint":{
                 result = "Long";
@@ -137,7 +137,7 @@ public class Sql2Pojo {
      * @param result
      */
     public static void writeToFile(List<String> result){
-        Path fpath= Paths.get("files/comment_result.txt");
+        Path fpath= Paths.get("/Users/guangxush/IDEA/wheel/ORM/src/files/comment_result.txt");
         //创建文件
         if(!Files.exists(fpath)) {
             try {

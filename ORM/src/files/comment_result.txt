@@ -1,0 +1,1 @@
+CommentLong `id`Long `customerIcustomerLong `sellerIsellerLong `deliverIdeliverLong `foodIfoodString `foodCfoodString `sellerCsellerString `deliverCdeliverInteger `foodSfoodInteger `deliverSdeliverInteger `sellerSsellerString `commentDcommentInteger `named`Integer `deleted`
