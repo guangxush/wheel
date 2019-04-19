@@ -137,7 +137,7 @@ public class Sql2Pojo {
      * @param result
      */
     public static void writeToFile(List<String> result){
-        Path fpath= Paths.get("../files/comment.txt");
+        Path fpath= Paths.get("files/comment_result.txt");
         //创建文件
         if(!Files.exists(fpath)) {
             try {

@@ -1,4 +1,4 @@
-package com.shgx.order.model;
+package files;
 
 import com.shgx.order.enums.StatusEnum;
 import com.shgx.order.enums.ScoreEnum;

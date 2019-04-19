@@ -11,8 +11,8 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
-        File file = new File("/files/takeout.sql");
-        //Path fpath= Paths.get("../files/takeout.sql");
+        Path relative = Paths.get("files", "takeout.sql");
+        File file = relative.toFile();
         List<String> rawData = new ArrayList<>();
         try {
             rawData = Sql2Pojo.readFile(file);
