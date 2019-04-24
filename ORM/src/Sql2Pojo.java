@@ -39,9 +39,7 @@ public class Sql2Pojo {
         String[] words = line.trim().split(" ");
         String result = null;
         switch (words[0]){
-            case "--":{
-                break;
-            }
+            case "--":
             case "DROP": {
                 break;
             }
@@ -49,6 +47,7 @@ public class Sql2Pojo {
                 result = words[2].substring(1,words[2].length()-1);
                 //首字母大写
                 result = result.substring(0,1).toUpperCase()+result.substring(1);
+                result = "public class "+ result + "{\n";
                 break;
             }
             default:{
@@ -66,11 +65,11 @@ public class Sql2Pojo {
                                 continue;
                             }
                             item = item.substring(0,1).toUpperCase()+result.substring(1);
-                            result += item;
+                            result = result+item;
                         }
                         //转换属性的类型
                         String qualifiers = words[1];
-                        result = recQualifiers(qualifiers)+" "+result;
+                        result = recQualifiers(qualifiers)+" "+result+";\n";
                         break;
                     }default:{
                         result = null;
@@ -94,6 +93,7 @@ public class Sql2Pojo {
         }
         int index = (qualifiers.indexOf('(')!=-1?qualifiers.indexOf('('):qualifiers.length()-1);
         qualifiers = qualifiers.substring(0, index);
+        result += "    ";
         switch (qualifiers){
             case "bigint":{
                 result = "Long";
@@ -149,8 +149,12 @@ public class Sql2Pojo {
         //创建BufferedWriter
         try {
             BufferedWriter bfw=Files.newBufferedWriter(fpath);
+            int count = result.size();
             for(String line : result){
                 bfw.write(line);
+                if(--count==0){
+                    bfw.write("}");
+                }
             }
             bfw.flush();
             bfw.close();

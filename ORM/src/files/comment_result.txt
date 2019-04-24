@@ -1,1 +1,16 @@
-CommentLong `id`Long `customerIcustomerLong `sellerIsellerLong `deliverIdeliverLong `foodIfoodString `foodCfoodString `sellerCsellerString `deliverCdeliverInteger `foodSfoodInteger `deliverSdeliverInteger `sellerSsellerString `commentDcommentInteger `named`Integer `deleted`
+public class Comment{
+Long `id`;
+Long `customerIcustomer;
+Long `sellerIseller;
+Long `deliverIdeliver;
+Long `foodIfood;
+String `foodCfood;
+String `sellerCseller;
+String `deliverCdeliver;
+Integer `foodSfood;
+Integer `deliverSdeliver;
+Integer `sellerSseller;
+String `commentDcomment;
+Integer `named`;
+Integer `deleted`;
+}
