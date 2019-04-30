@@ -1,16 +1,86 @@
 public class Comment{
-Long `id`;
-Long `customerIcustomer;
-Long `sellerIseller;
-Long `deliverIdeliver;
-Long `foodIfood;
-String `foodCfood;
-String `sellerCseller;
-String `deliverCdeliver;
-Integer `foodSfood;
-Integer `deliverSdeliver;
-Integer `sellerSseller;
-String `commentDcomment;
-Integer `named`;
-Integer `deleted`;
+
+    /**
+     * 评论id
+     */
+    @Column(name = "id")
+    Long id;
+
+    /**
+     * 客户id
+     */
+    @Column(name = "customer_id")
+    Long customerId;
+
+    /**
+     * 家id
+     */
+    @Column(name = "seller_id")
+    Long sellerId;
+
+    /**
+     * 外卖员id
+     */
+    @Column(name = "deliver_id")
+    Long deliverId;
+
+    /**
+     * 食品id
+     */
+    @Column(name = "food_id")
+    Long foodId;
+
+    /**
+     * 对商品的评论内容
+     */
+    @Column(name = "food_comment")
+    String foodComment;
+
+    /**
+     * 对商家的评论内容
+     */
+    @Column(name = "seller_comment")
+    String sellerComment;
+
+    /**
+     * 对快递员评论内容
+     */
+    @Column(name = "deliver_comment")
+    String deliverComment;
+
+    /**
+     * 商品评分：1,2,3,4,5，数字越大评分越高
+     */
+    @Column(name = "food_score")
+    Integer foodScore;
+
+    /**
+     * 快递员评分：1,2,3,4,5，数字越大评分越高
+     */
+    @Column(name = "deliver_score")
+    Integer deliverScore;
+
+    /**
+     * 卖家评分：1,2,3,4,5，数字越大评分越高
+     */
+    @Column(name = "seller_score")
+    Integer sellerScore;
+
+    /**
+     * UL
+     */
+    @Column(name = "comment_date")
+    String commentDate;
+
+    /**
+     * 是否匿名：0匿名，1不匿名
+     */
+    @Column(name = "named")
+    Integer named;
+
+    /**
+     * 评论删除状态0：未删除，1已删除
+     */
+    @Column(name = "deleted")
+    Integer deleted;
 }

@@ -52,11 +52,18 @@ public class Sql2Pojo {
             }
             default:{
                 String lastWord = words[words.length-1];
+                /**
+                 * 主键自增id
+                 */
+                String notes = "\n    /**\n     * "+ lastWord.substring(1, lastWord.length()-2)+"\n     */";
                 char lastChar = lastWord.charAt(lastWord.length()-1);
                 switch (lastChar){
                     case ',':{
                         //转换为对象的属性
-                        String[] items = words[0].split("_");
+                        //@Column(name = "customer_id")
+                        String temp = words[0].substring(1, words[0].length()-1);
+                        String annotate = "\n    @Column(name = \""+temp+"\")\n";
+                        String[] items = temp.split("_");
                         int index = 0;
                         for(String item:items){
                             if(index==0){
@@ -64,12 +71,12 @@ public class Sql2Pojo {
                                 index ++;
                                 continue;
                             }
-                            item = item.substring(0,1).toUpperCase()+result.substring(1);
+                            item = item.substring(0,1).toUpperCase()+item.substring(1);
                             result = result+item;
                         }
                         //转换属性的类型
                         String qualifiers = words[1];
-                        result = recQualifiers(qualifiers)+" "+result+";\n";
+                        result = notes+annotate + "    " + recQualifiers(qualifiers)+" "+result+";\n";
                         break;
                     }default:{
                         result = null;
