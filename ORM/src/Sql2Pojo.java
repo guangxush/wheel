@@ -19,7 +19,6 @@ public class Sql2Pojo {
      */
     public static List<String> readFile(File fin) throws IOException {
         FileInputStream fis = new FileInputStream(fin);
-        // Construct BufferedReader from InputStreamReader
         BufferedReader br = new BufferedReader(new InputStreamReader(fis));
         String line = null;
         List<String> lines = new ArrayList<>();
@@ -100,7 +99,6 @@ public class Sql2Pojo {
         }
         int index = (qualifiers.indexOf('(')!=-1?qualifiers.indexOf('('):qualifiers.length()-1);
         qualifiers = qualifiers.substring(0, index);
-        result += "    ";
         switch (qualifiers){
             case "bigint":{
                 result = "Long";
