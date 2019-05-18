@@ -50,7 +50,7 @@ public class ServiceCenter implements Server {
 
     @Override
     public boolean isRunning() {
-        return false;
+        return isRunning;
     }
 
     @Override

@@ -6,13 +6,13 @@ import java.io.IOException;
  */
 public interface Server {
 
-    public void start() throws IOException;
+    void start() throws IOException;
 
-    public void register(Class serviceInterface, Class impl);
+    void register(Class serviceInterface, Class impl);
 
-    public boolean isRunning();
+    boolean isRunning();
 
-    public int getPort();
+    int getPort();
 
-    public void stop();
+    void stop();
 }
