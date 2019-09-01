@@ -10,12 +10,12 @@
 
 - 先进先出FIFO页面置换算法
 原理：淘汰最先进入内存的页面，即选择在页面待的时间最长的页面淘汰
-![image.png](https://upload-images.jianshu.io/upload_images/7632302-775ee3ac3a6d7421.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://github.com/guangxush/iTechHeart/blob/master/image/Wheel/FIFO.png)
 
 
 - 最近最久未使用LRU置换算法
 原理：选择最近且最久未被使用的页面进行淘汰
-![image.png](https://upload-images.jianshu.io/upload_images/7632302-147c2f801f0e8254.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://github.com/guangxush/iTechHeart/blob/master/image/Wheel/LRU.png)
 
 ### 3. 具体实现
 
