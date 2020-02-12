@@ -5,9 +5,6 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
-import java.nio.ByteBuffer;
-import java.util.Objects;
-import java.util.Observable;
 import java.util.logging.Logger;
 
 /**
