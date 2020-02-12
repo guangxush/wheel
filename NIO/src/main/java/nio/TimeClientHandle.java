@@ -44,6 +44,7 @@ public class TimeClientHandle implements Runnable {
         }
     }
 
+    @Override
     public void run() {
         try {
             //连接成功，客户端不需要重连操作，所以在while前面判断
