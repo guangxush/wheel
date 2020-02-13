@@ -39,7 +39,16 @@ TCP是个流协议，TCP底层不了解上层业务数据，所以会根据TCP�
 LineBasedFrameDecoder 原理是依次遍历ByteBuf中可读字节，判断是否有\n或者\r\n，如果有那么以此位置为结束，从可读索引到结束位置区间的字节组成一行
 是以换行符为结束标志的解码器，支持携带结束符和不携带两种，可配置单行最大长度，如果到了最大长度之后仍然没有换行符就会抛出异常
 
-
 StringDecoder的功能很简单，是将接收到的对象转换成字符串，然后调用Handler
 
+粘包的代码见bad目录，优化后的代码见good目录
 
+#### 使用DelimiterBasedFrameDecoder和FixedLengthFrameDecoder解决粘包拆包导致的半读包问题
+
+DelimiterBasedFrameDecoder用于对使用分隔符结尾的消息进行自动解码
+
+DelimiterBasedFrameDecoder代码见good2
+
+FixedLengthFrameDecoder用于对固定长度的消息进行自动解码
+
+FixedLengthFrameDecoder代码见good3
