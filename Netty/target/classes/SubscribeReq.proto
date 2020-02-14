@@ -1,0 +1,10 @@
+package endecoder.protobuf;
+option java_package = "com.shgx.endecoder.protobuf";
+option java_outer_classname = "SubscribeReqProto";
+
+message SubscribeReq{
+    required int32 subReqID = 1;
+    required string userName = 2;
+    required string productName = 3;
+    required string address = 4;
+}
