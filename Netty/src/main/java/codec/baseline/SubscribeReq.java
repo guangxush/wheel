@@ -1,4 +1,4 @@
-package endecoder.baseline;
+package codec.baseline;
 
 import java.io.Serializable;
 

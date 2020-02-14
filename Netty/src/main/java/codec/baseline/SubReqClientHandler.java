@@ -1,4 +1,4 @@
-package endecoder.baseline;
+package codec.baseline;
 
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
