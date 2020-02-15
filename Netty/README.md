@@ -49,6 +49,20 @@ DirectBuffer 在 -XX:MaxDirectMemorySize=xxM大小限制下, 使用 Heap 之外�
 Netty中的编码/解码器，通过他你能完成字节与pojo、pojo与pojo的相互转换，从而达到自定义协议的目的。
 在Netty里面最有名的就是HttpRequestDecoder和HttpResponseEncoder了。
      
+     
+### 代码参考
+
+[粘包拆包](./src/main/java/sticky)
+
+[编码解码](./src/main/java/codec)
+
+[http传输](./src/main/java/http)
+
+[websocket传输](./src/main/java/websocket)
+
+[udp传输](./src/main/java/udp)
+
+[文件传输](./src/main/java/file)
    
 
 
