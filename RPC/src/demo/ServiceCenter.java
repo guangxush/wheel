@@ -1,10 +1,10 @@
+package demo;
+
 import java.io.*;
-import java.lang.reflect.Member;
 import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.rmi.server.ExportException;
 import java.util.HashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -33,7 +33,7 @@ public class ServiceCenter implements Server {
     public void start() throws IOException {
         ServerSocket server = new ServerSocket();
         server.bind(new InetSocketAddress(port));
-        System.out.println("Server Start .....");
+        System.out.println("demo.Server Start .....");
         try{
             while(true){
                 executor.execute(new ServiceTask(server.accept()));
