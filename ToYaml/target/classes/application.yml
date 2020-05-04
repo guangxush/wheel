@@ -1,0 +1,23 @@
+server:
+  servlet:
+    session:
+      timeout: 2000s
+spring:
+  redis:
+    host: 127.0.0.1
+    jedis:
+      pool:
+        max-idle: 10
+        max-wait: -1ms
+    lettuce:
+      pool:
+        max-idle: 8
+      shutdown-timeout: 100ms
+    password: 135246
+    port: 6379
+    timeout: 300ms
+  session:
+    redis:
+      flush-mode: on_save
+      namespace: spring:session
+    store-type: redis
