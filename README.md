@@ -40,3 +40,7 @@ net nio os cache db rpc json web http udp tcp mq
 ### ToYaml
 
 [将Properties文件转成YAML格式](./ToYaml)
+
+### Cache
+
+[使用ThreadLocal自定义查询缓存](./Cache)
