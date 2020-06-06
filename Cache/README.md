@@ -36,7 +36,7 @@ public class ContextHolder {
         }
     }
 
-    public static void addUserInfo(String uid, Student student){
+    public static void addUserInfo(String uid, basedemo.Student student){
         if(StringUtils.isBlank(uid) || student ==null){
             System.out.println("uid和student不能为空");
             return;
@@ -49,7 +49,7 @@ public class ContextHolder {
         context.putObject(uid, student);
     }
 
-    public static Student getStudent(String uid){
+    public static basedemo.Student getStudent(String uid){
         if(StringUtils.isBlank(uid)){
             System.out.println("uid不能为空");
             return null;
@@ -58,7 +58,7 @@ public class ContextHolder {
         if(null == context){
             return null;
         }
-        return (Student) context.getObject(uid);
+        return (basedemo.Student) context.getObject(uid);
     }
 }
 ```
@@ -68,7 +68,7 @@ public class ContextHolder {
 ```java
 public class QueryInfoImpl implements QueryInfo {
 
-    public Student queryInfoByUid(String uid) {
+    public basedemo.Student queryInfoByUid(String uid) {
         //判空
         if(StringUtils.isBlank(uid)){
             return null;
@@ -79,7 +79,7 @@ public class QueryInfoImpl implements QueryInfo {
             return ContextHolder.getStudent(uid);
         }
         //缓存中不存在，去DB中查询
-        Student student = StudentRepository.getStudentById(uid);
+        basedemo.Student student = StudentRepository.getStudentById(uid);
 
         //保存结果到缓存中
         ContextHolder.addUserInfo(uid, student);
@@ -110,11 +110,11 @@ public class Main {
 
 ```text
 *******调用DB*******
-Student{uid='0789128', name='shgx', age=22}
+basedemo.Student{uid='0789128', name='shgx', age=22}
 *******调用缓存*******
-Student{uid='0789128', name='shgx', age=22}
+basedemo.Student{uid='0789128', name='shgx', age=22}
 *******调用DB*******
-Student{uid='0789128', name='shgx', age=22}
+basedemo.Student{uid='0789128', name='shgx', age=22}
 ```
 
 ### 拓展

@@ -7,7 +7,7 @@
 
 父类
 ```java
-public class Parents {
+public class basedemo.Parents {
     public void function(){
         System.out.println("I'm parents!");
     }
@@ -17,7 +17,7 @@ public class Parents {
 
 子类
 ```java
-public class Children extends Parents{
+import basedemo.Parents;public class Children extends Parents{
     @Override
     public void function() {
         System.out.println("I'm children!");;
@@ -27,11 +27,10 @@ public class Children extends Parents{
 
 测试类
 ```java
-public class TestReflection {
-
+import basedemo.Parents;public class TestReflection {
     @org.junit.Test
     public void testFunction() throws Exception{
-        Class cls = Class.forName("Children");
+        Class cls = Class.forName("basedemo.Children");
         Parents parents = (Parents)cls.newInstance();
         parents.function();
     }
@@ -49,7 +48,7 @@ I'm children!
 
 这里我们增加一个实现类Student
 ```java
-public class Student extends Parents{
+import basedemo.Parents;public class Student extends Parents{
     @Override
     public void function() {
         System.out.println("I'm children!");;
@@ -59,18 +58,18 @@ public class Student extends Parents{
 
 增加一个工厂，模拟注册中心，调用子类的方法
 ```java
-public class Factory {
+public class basedemo.Factory {
     private static Map<String, String> map = new HashMap<String, String>();
 
     static{
         map.clear();
         // 模拟注册中心，存放实现类
-        map.put("Children", "Children");
-        map.put("Student", "Student");
+        map.put("basedemo.Children", "basedemo.Children");
+        map.put("basedemo.Student", "basedemo.Student");
     }
 
     public static void main(String[] args) {
-        run("Student");
+        run("basedemo.Student");
     }
 
     private static
