@@ -13,7 +13,7 @@ JSON建构于两种结构：
 
 ### 参考事例
 - 2.1直接构建
- ```
+```java
 import org.json.JSONObject;
 
 public class JSONObjectSample {
@@ -32,7 +32,7 @@ public class JSONObjectSample {
 }
 ```
 - 2.2使用Map构建
-```
+```java
 public class JSONObjectSample {
 
     public static void main(String[] args) {
@@ -51,7 +51,7 @@ public class JSONObjectSample {
 }
 ```
 - 2.3使用JAVA bean创建
-```
+```java
 import org.json.JSONObject;
 
 class PersonInfo {
@@ -99,7 +99,7 @@ public class JSONObjectSample {
 ```
 ### 3. 自己实现一个简易版的JSON解析器
 - 代码仅供参考，功能不太完善，欢迎补充指正
-```
+```java
 public class JSONImpl implements JSON {
     /**
      * object -> String

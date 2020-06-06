@@ -47,7 +47,7 @@ public class Producer implements Runnable{
             //队列已满，循环等待
             synchronized (queue){
                 System.out.println("Queue is full "+Thread.currentThread().getName()+
-                 " is waiting, size: "+queue.isEmpty());
+                        " is waiting, size: "+queue.isEmpty());
                 queue.wait();
             }
         }

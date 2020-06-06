@@ -15,21 +15,21 @@ public class Main {
         /**
          * 生产者消费者
          */
-        Producer producer = new Producer(queue,size);
-        Consumer consumer = new Consumer(queue,size);
+        Producer producer = new Producer(queue, size);
+        Consumer consumer = new Consumer(queue, size);
 
         /**
          * 创建线程池运行
          */
-        Thread prodThead = new Thread(producer ,"Producer");
+        Thread prodThead = new Thread(producer, "Producer");
         ThreadPoolExecutor exec = new ThreadPoolExecutor(2, 2,
                 0L, TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<>());
 
-        for(int i=11;i<100;i++){
+        for (int i = 11; i < 100; i++) {
             producer.setContent(i);
             exec.execute(prodThead);
-            if(i%5==0){
+            if (i % 5 == 0) {
                 exec.submit(consumer);
             }
         }

@@ -14,6 +14,12 @@
         <module>nio</module>
         <module>Cache</module>
         <module>Reflection</module>
+        <module>JSONParse</module>
+        <module>MQ</module>
+        <module>ORM</module>
+        <module>PageReplace</module>
+        <module>RPC</module>
+        <module>ThreadPool</module>
     </modules>
 
 
