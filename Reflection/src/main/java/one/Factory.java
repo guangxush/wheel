@@ -1,4 +1,4 @@
-package basedemo;
+package one;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,12 +15,12 @@ public class Factory {
     static {
         map.clear();
         // 模拟注册中心，存放实现类
-        map.put("basedemo.Children", "basedemo.Children");
-        map.put("basedemo.Student", "basedemo.Student");
+        map.put("one.Children", "one.Children");
+        map.put("one.Student", "one.Student");
     }
 
     public static void main(String[] args) {
-        run("basedemo.Student");
+        run("one.Student");
     }
 
     private static void run(String clzName) {

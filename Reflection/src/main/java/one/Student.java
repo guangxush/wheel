@@ -1,4 +1,4 @@
-package basedemo;
+package one;
 
 /**
  * 子类
@@ -6,10 +6,9 @@ package basedemo;
  * @author: guangxush
  * @create: 2020/05/31
  */
-public class Children extends Parents {
+public class Student extends Parents {
     @Override
     public void function() {
         System.out.println("I'm children!");
-        ;
     }
 }
