@@ -44,3 +44,9 @@ net nio os cache db rpc json web http udp tcp mq
 ### Cache
 
 [使用ThreadLocal自定义查询缓存](./Cache)
+
+
+
+#### Help
+
+如果本地打开该项目无法自动识别Project，可以右键wheel根目录下的pom.xml，选择”add as maven project”,即可自动导入pom所依赖的jar包
