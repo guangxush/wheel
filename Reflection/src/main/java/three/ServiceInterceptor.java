@@ -11,18 +11,16 @@ import org.aopalliance.intercept.MethodInvocation;
  */
 public class ServiceInterceptor implements MethodInterceptor {
 
-    private static final String INTERCEPTOR = "printLog";
+    private static final String INTERCEPTOR = "run";
 
-
+    @Override
     public Object invoke(MethodInvocation methodInvocation) throws Throwable {
         Object result = null;
+        if(!INTERCEPTOR.equals(methodInvocation.getMethod().getName())){
+            System.out.println("不能执行该方法" + methodInvocation.getMethod().getName());
+            return null;
+        }
         try {
-            if(INTERCEPTOR.equals(methodInvocation.getMethod().getName())){
-                //日志直接打印
-                result = methodInvocation.proceed();
-                return result;
-            }
-
             System.out.println("方法执行之前：" + methodInvocation.getMethod().toString());
 
             result = methodInvocation.proceed();
