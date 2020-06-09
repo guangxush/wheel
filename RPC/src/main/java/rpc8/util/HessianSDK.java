@@ -1,4 +1,4 @@
-package rpc8;
+package rpc8.util;
 
 import com.caucho.hessian.io.Hessian2Input;
 import com.caucho.hessian.io.Hessian2Output;
@@ -11,7 +11,7 @@ import java.io.ByteArrayOutputStream;
  * @author: guangxush
  * @create: 2020/05/03
  */
-public class HelloHessian {
+public class HessianSDK {
     public static void main(String[] args) throws Exception {
         User user = new User(1, "Sandy");
         byte[] bytes = serialize(user);

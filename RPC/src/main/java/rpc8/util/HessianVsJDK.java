@@ -1,4 +1,4 @@
-package rpc8;
+package rpc8.util;
 
 import common.User;
 
@@ -11,7 +11,7 @@ import java.io.*;
 public class HessianVsJDK {
     public static void main(String[] args) throws Exception {
         User u = new User(1,"Sandy");
-        System.out.println("Hessian:"+ HelloHessian.serialize(u).length);
+        System.out.println("Hessian:"+ HessianSDK.serialize(u).length);
         System.out.println("JDK:"+jdkSerialByte(u).length);
     }
 
