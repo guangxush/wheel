@@ -1,9 +1,9 @@
-package five;
+package seven;
 
 import org.apache.commons.logging.Log;
 
-import static five.LogConstant.C_PREFIX;
-import static five.LogConstant.C_SUFFIX;
+import static seven.LogConstant.C_PREFIX;
+import static seven.LogConstant.C_SUFFIX;
 
 /**
  * @author: guangxush

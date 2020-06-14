@@ -1,6 +1,4 @@
-package five;
-
-import jdk.nashorn.internal.ir.annotations.Reference;
+package seven;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

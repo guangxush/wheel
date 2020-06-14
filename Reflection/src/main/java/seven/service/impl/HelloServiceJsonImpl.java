@@ -1,7 +1,7 @@
-package five.service.impl;
+package seven.service.impl;
 
-import five.*;
-import five.service.HelloService;
+import seven.*;
+import seven.service.HelloService;
 
 /**
  * @author: guangxush

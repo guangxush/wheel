@@ -1,11 +1,11 @@
-package five;
+package seven;
 
 import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.Serializable;
 
-import static five.LogConstant.*;
+import static seven.LogConstant.*;
 
 /**
  * @author: guangxush

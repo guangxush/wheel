@@ -1,9 +1,8 @@
-package five.service.impl;
+package seven.service.impl;
 
-import five.JsonLogInfo;
-import five.LogAnnotation;
-import five.LogTypeEnum;
-import five.service.HelloService;
+import seven.LogAnnotation;
+import seven.LogTypeEnum;
+import seven.service.HelloService;
 
 /**
  * @author: guangxush
