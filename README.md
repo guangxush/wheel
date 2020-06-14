@@ -45,7 +45,9 @@ net nio os cache db rpc json web http udp tcp mq
 
 [使用ThreadLocal自定义查询缓存](./Cache)
 
+### Instrument
 
+[基于Java Instrument的Agent实现](./Instrument)
 
 #### Help
 
