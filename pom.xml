@@ -21,6 +21,7 @@
         <module>RPC</module>
         <module>ThreadPool</module>
         <module>Instrument</module>
+        <module>Compiler</module>
     </modules>
 
 
