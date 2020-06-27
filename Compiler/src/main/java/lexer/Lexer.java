@@ -43,4 +43,64 @@ public class Lexer {
         peek = ' ';
         return true;
     }
+
+    public Token scan() throws Exception {
+        for (; ; readch()) {
+            if (peek == ' ' || peek == '\t') {
+                continue;
+            } else if (peek == '\n') {
+                line = line + 1;
+            }else{
+                break;
+            }
+        }
+        switch (peek){
+            case '&':
+                if(readch('&')){
+                    return Word.and;
+                }else{
+                    return new Token('&');
+                };
+            case '|':
+                if(readch('|')){
+                    return Word.or;
+                }else{
+                    return new Token('|');
+                };
+            case '=':
+                if(readch('=')){
+                    return Word.eq;
+                }else{
+                    return new Token('=');
+                };
+            case '!':
+                if(readch('=')){
+                    return Word.ne;
+                }else{
+                    return new Token('!');
+                };
+            case '<':
+                if(readch('=')){
+                    return Word.le;
+                }else{
+                    return new Token('<');
+                };
+            case '>':
+                if(readch('=')){
+                    return Word.ge;
+                }else{
+                    return new Token('=');
+                };
+        }
+        if(Character.isDigit(peek)){
+            int v = 0;
+            do{
+                v = 10*v+Character.digit(peek,10);
+                readch();
+            }while (Character.isDigit(peek));
+            if(peek != '.'){
+               // return new Num(v);
+            }
+        }
+    }
 }
