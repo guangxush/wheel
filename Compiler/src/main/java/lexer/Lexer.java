@@ -60,37 +60,37 @@ public class Lexer {
                     return Word.and;
                 }else{
                     return new Token('&');
-                };
+                }
             case '|':
                 if(readch('|')){
                     return Word.or;
                 }else{
                     return new Token('|');
-                };
+                }
             case '=':
                 if(readch('=')){
                     return Word.eq;
                 }else{
                     return new Token('=');
-                };
+                }
             case '!':
                 if(readch('=')){
                     return Word.ne;
                 }else{
                     return new Token('!');
-                };
+                }
             case '<':
                 if(readch('=')){
                     return Word.le;
                 }else{
                     return new Token('<');
-                };
+                }
             case '>':
                 if(readch('=')){
                     return Word.ge;
                 }else{
                     return new Token('=');
-                };
+                }
         }
         if(Character.isDigit(peek)){
             int v = 0;
@@ -102,5 +102,6 @@ public class Lexer {
                // return new Num(v);
             }
         }
+        return null;
     }
 }
