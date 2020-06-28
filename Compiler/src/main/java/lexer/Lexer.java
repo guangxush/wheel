@@ -94,14 +94,42 @@ public class Lexer {
         }
         if(Character.isDigit(peek)){
             int v = 0;
-            do{
-                v = 10*v+Character.digit(peek,10);
+            do {
+                v = 10 * v + Character.digit(peek, 10);
                 readch();
-            }while (Character.isDigit(peek));
-            if(peek != '.'){
-               // return new Num(v);
+            } while (Character.isDigit(peek));
+            if (peek != '.') {
+                // return new Num(v);
             }
+            float x = v;
+            float d = 10;
+            for (; ; ) {
+                readch();
+                if (!Character.isDigit(peek)) {
+                    break;
+                }
+                x = x + Character.digit(peek, 10) / d;
+                d = d * 10;
+            }
+            return new Real(x);
         }
-        return null;
+        if (Character.isLetter(peek)) {
+            StringBuffer sb = new StringBuffer();
+            do {
+                sb.append(peek);
+                readch();
+            } while (Character.isLetterOrDigit(peek));
+            String s = sb.toString();
+            Word w = (Word) words.get(s);
+            if (w != null) {
+                return w;
+            }
+            w = new Word(s, Tag.ID);
+            words.put(s, w);
+            return w;
+        }
+        Token token = new Token(peek);
+        peek = ' ';
+        return token;
     }
 }
