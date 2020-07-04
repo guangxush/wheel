@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /**
+ * 基本的代理类
  * @author: guangxush
  * @create: 2020/06/07
  */

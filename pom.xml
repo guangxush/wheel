@@ -22,6 +22,7 @@
         <module>ThreadPool</module>
         <module>Instrument</module>
         <module>Compiler</module>
+        <module>Annotation</module>
     </modules>
 
 

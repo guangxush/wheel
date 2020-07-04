@@ -1,13 +1,11 @@
 package two;
 
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.net.Socket;
 
 /**
+ * 优雅的代理类
  * @author: guangxush
  * @create: 2020/06/07
  */
