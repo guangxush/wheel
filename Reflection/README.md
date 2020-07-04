@@ -99,7 +99,7 @@ public class Factory {
 I'm children!
 ```
 
-### 案例2 增加一个代理类的反射
+### 案例2 动态代理实现反射
 
 父类接口
 ```java
