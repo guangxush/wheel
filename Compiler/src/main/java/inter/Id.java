@@ -1,6 +1,7 @@
 package inter;
 
 import lexer.Token;
+import lexer.Word;
 import symbols.Type;
 
 /**
@@ -11,7 +12,8 @@ public class Id extends Expr {
     // 相对地址
     public int offset;
 
-    public Id(Token op, Type type) {
-        super(op, type);
+    public Id(Word id, Type type, int b) {
+        super(id, type);
+        this.offset = b;
     }
 }

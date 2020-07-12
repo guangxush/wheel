@@ -27,4 +27,22 @@ public class Logical extends Expr {
         return null;
     }
 
+    @Override
+    public Expr gen() {
+        int f = newLabel();
+        int a = newLabel();
+        Temp temp = new Temp(type);
+        this.jumping(0, f);
+        emit(temp.toString() + " = true");
+        emit("goto L" + a);
+        emitLabel(f);
+        emit(temp.toString() + " = false");
+        emitLabel(a);
+        return temp;
+    }
+
+    @Override
+    public String toString() {
+        return expr1.toString() + " " + op.toString() + " " + expr2.toString();
+    }
 }

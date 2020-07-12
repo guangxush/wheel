@@ -44,7 +44,7 @@ public class Lexer {
         return true;
     }
 
-    public Token scan() throws Exception {
+    public Token scan() throws IOException {
         for (; ; readch()) {
             if (peek == ' ' || peek == '\t') {
                 continue;
