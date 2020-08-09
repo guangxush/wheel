@@ -34,3 +34,7 @@ Restful调用效率太低，远程过程调用可以使用更加短小而精悍�
 ### RPC其他功能
 
 服务注册、服务发现、服务治理、负载均衡等等
+
+### RPC其他实现Demo
+
+[hello-rpc](https://github.com/guangxush/hello-rpc)
