@@ -350,3 +350,65 @@ null
 ```
 
 Spring中采用@Service实现对相关bean的创建，类似上述方法
+
+### 案例3
+
+如果引入了Lombok包，可以在pojo类上面添加注解@Data，这样可以在运行时自动加入get set 以及toString方法，我们这里模拟一个注解+反射实现打印变量的方法。
+
+1. 新增一个注解
+```Java
+@Target({ElementType.TYPE}) //类注解
+@Documented //将注解包含在Javadoc中
+@Inherited //允许子类继承父类中的注解
+@Retention(RetentionPolicy.RUNTIME) //VM将在运行期间保留注解，因此可以通过反射机制读取注解的信息
+public @interface DataAnnotation {
+    boolean value() default false;
+}
+```
+2. 新建一个Pojo类，并引入该注解
+
+```Java
+@DataAnnotation(value = true)
+public class Student {
+    private String name = "zhangsan";
+    private Integer age = 12;
+}
+```
+
+3. 测试注解的执行情况
+
+```Java
+public class AnnotationTest {
+    public static void main(String[] args) throws Exception {
+        // 新建Student
+        Student student = new Student();
+        // 获取Student的Class实例
+        Class<Student> studentClass = Student.class;
+        iteratorAnnotations(studentClass);
+    }
+
+    public static void iteratorAnnotations(Class clazz) throws IllegalAccessException, InstantiationException {
+
+        // 判断方法是否包含DataAnnotation注解
+        if(clazz.isAnnotationPresent(DataAnnotation.class)){
+            // 获取该方法的MyAnnotation注解实例
+            DataAnnotation testAnnotation = (DataAnnotation) clazz.getAnnotation(DataAnnotation.class);
+            // 获取 myAnnotation的值，并打印出来
+            boolean value = testAnnotation.value();
+            // 如果value为true，打印参数，否则直接返回
+            if(value){
+                Field[] fields = clazz.getDeclaredFields();
+                for( Field field : fields){
+                    // 设置可见性，便于打印变量
+                    field.setAccessible(true);
+                    System.out.println( field.getName() + ":" +field.get(clazz.newInstance()));
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+[参考链接](./src/main/java/data)
+
