@@ -23,6 +23,7 @@
         <module>Instrument</module>
         <module>Compiler</module>
         <module>Annotation</module>
+        <module>SpringCore</module>
     </modules>
 
 
