@@ -14,7 +14,7 @@ public class UserService {
 
 1.2 在服务中引入Service
 
-```java 
+```java
 public class UserController {
 
     private UserService userService;
@@ -73,7 +73,7 @@ public @interface Autowired {
 ```
 
 1.2 编写Service
-```java 
+```java
 public class UserService {
 }
 ```
@@ -154,7 +154,9 @@ public class TestApplicationContext {
 
 1.4 核心源码
 
-```java 
+org.springframework.context.support.AbstractApplicationContext.refresh
+
+```java
 @Override
 	public void refresh() throws BeansException, IllegalStateException {
 		synchronized (this.startupShutdownMonitor) {
@@ -220,3 +222,45 @@ public class TestApplicationContext {
 		}
 	}
 ```
+
+org.springframework.beans.factory.BeanFactory
+
+```java
+/**
+ * <p>Bean factory implementations should support the standard bean lifecycle interfaces
+ * as far as possible. The full set of initialization methods and their standard order is:
+ * <ol>
+ * <li>BeanNameAware's {@code setBeanName}
+ * <li>BeanClassLoaderAware's {@code setBeanClassLoader}
+ * <li>BeanFactoryAware's {@code setBeanFactory}
+ * <li>EnvironmentAware's {@code setEnvironment}
+ * <li>EmbeddedValueResolverAware's {@code setEmbeddedValueResolver}
+ * <li>ResourceLoaderAware's {@code setResourceLoader}
+ * (only applicable when running in an application context)
+ * <li>ApplicationEventPublisherAware's {@code setApplicationEventPublisher}
+ * (only applicable when running in an application context)
+ * <li>MessageSourceAware's {@code setMessageSource}
+ * (only applicable when running in an application context)
+ * <li>ApplicationContextAware's {@code setApplicationContext}
+ * (only applicable when running in an application context)
+ * <li>ServletContextAware's {@code setServletContext}
+ * (only applicable when running in a web application context)
+ * <li>{@code postProcessBeforeInitialization} methods of BeanPostProcessors
+ * <li>InitializingBean's {@code afterPropertiesSet}
+ * <li>a custom init-method definition
+ * <li>{@code postProcessAfterInitialization} methods of BeanPostProcessors
+ * </ol>
+ *
+ * <p>On shutdown of a bean factory, the following lifecycle methods apply:
+ * <ol>
+ * <li>{@code postProcessBeforeDestruction} methods of DestructionAwareBeanPostProcessors
+ * <li>DisposableBean's {@code destroy}
+ * <li>a custom destroy-method definition
+ * </ol>
+```
+
+1.5 Spring特性
+
+不需要自己创建对象，使用IOC容器+工厂模式创建，需要的时候去容器中拿就可以，Spring是一种生态，具有高可扩展性。
+
+![](assets/README-26f0d6f5.png)
