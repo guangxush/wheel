@@ -24,6 +24,7 @@
         <module>Compiler</module>
         <module>Annotation</module>
         <module>SpringCore</module>
+        <module>HappyParse</module>
     </modules>
 
 
