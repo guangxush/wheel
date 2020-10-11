@@ -157,6 +157,22 @@ private String userId;
         System.out.println("Copy over");
         inChannel.close();
     }
+    /**
+     * 按照行读文件
+     * @param fileName
+     * @throws IOException
+     */
+    public void doReadLine(String fileName) throws IOException {
+        inFile = new RandomAccessFile(fileName, "rw");
+        int lineNum = 0;
+        inFile.seek(lineNum);
+        String line = "";
+        while((line = inFile.readLine())!=null){
+            line =  new String(line.getBytes("UTF-8"), "UTF-8");
+            System.out.println(line);
+        }
+        inFile.close();
+    }
 
     /**
      * 倒序拷贝文件

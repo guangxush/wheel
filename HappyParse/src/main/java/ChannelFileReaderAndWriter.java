@@ -57,6 +57,23 @@ public class ChannelFileReaderAndWriter {
     }
 
     /**
+     * 按照行读文件
+     * @param fileName
+     * @throws IOException
+     */
+    public void doReadLine(String fileName) throws IOException {
+        inFile = new RandomAccessFile(fileName, "rw");
+        int lineNum = 0;
+        inFile.seek(lineNum);
+        String line = "";
+        while((line = inFile.readLine())!=null){
+            line =  new String(line.getBytes("UTF-8"), "UTF-8");
+            System.out.println(line);
+        }
+        inFile.close();
+    }
+
+    /**
      * 拷贝文件
      * @param sourceFile
      * @param targetFile
@@ -135,6 +152,7 @@ public class ChannelFileReaderAndWriter {
         //tool.doRead("HappyParse/src/main/resources/SourceFile.txt");
         //tool.doWrite("HappyParse/src/main/resources/TargetFile.txt");
         //tool.doCopy("HappyParse/src/main/resources/SourceFile.txt", "HappyParse/src/main/resources/CopyFile.txt");
-        tool.reverseCopy("HappyParse/src/main/resources/SourceFile.txt", "HappyParse/src/main/resources/ReverseCopyFile.txt");
+        // tool.reverseCopy("HappyParse/src/main/resources/SourceFile.txt", "HappyParse/src/main/resources/ReverseCopyFile.txt");
+        tool.doReadLine("HappyParse/src/main/resources/SourceFile.txt");
     }
 }
