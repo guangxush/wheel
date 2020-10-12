@@ -4,7 +4,7 @@ import java.util.concurrent.*;
  * @author: guangxush
  * @create: 2019/04/17
  */
-public class Main {
+public class Client {
     public static void main(String[] args) {
         /**
          * 设置队列和队列长度

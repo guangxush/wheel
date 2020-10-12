@@ -90,7 +90,7 @@ public class QueryInfoImpl implements QueryInfo {
 
 Main方法进行调用
 ```java
-public class Main {
+public class Client {
     private static QueryInfo queryInfo = new QueryInfoImpl();
     public static void main(String[] args) {
         // 初始化上下文
