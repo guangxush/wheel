@@ -236,3 +236,27 @@ private String userId;
 ```shell script
 perl -e 'print reverse <>' filename
 ```
+
+#### 正则表达式匹配
+
+[PatternMatch](./src/main/java/PatternMatch.java)
+实现一个函数用来匹配包括'.'和'*'的正则表达式。模式中的字符'.'表示任意一个字符，而'*'表示它前面的字符可以出现任意次（包含0次）。
+
+```java
+    private boolean match(char[] str, int i, char[] pattern, int j) {
+        if (j == pattern.length) {
+            return str.length == i;
+        }
+        if (j < pattern.length - 1 && pattern[j + 1] == '*') {
+            if (str.length != i && (str[i] == pattern[j] || pattern[j] == '.')) {
+                return match(str, i, pattern, j + 2) || match(str, i + 1, pattern, j);
+            } else {
+                return match(str, i, pattern, j + 2);
+            }
+        }
+        if (str.length != i && (str[i] == pattern[j] || pattern[j] == '.')) {
+            return match(str, i + 1, pattern, j + 1);
+        }
+        return false;
+    }
+```
