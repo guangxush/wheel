@@ -25,6 +25,7 @@
         <module>Annotation</module>
         <module>SpringCore</module>
         <module>HappyParse</module>
+        <module>PlayCenter</module>
     </modules>
 
 

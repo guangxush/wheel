@@ -61,6 +61,10 @@ net nio os cache db rpc json web http udp tcp mq
 ### HappyParse
 [各种Java解析小工具](./HappyParse)
 
+### PlayCenter
+
+[业务算法小工具(抢红包)](./PlayCenter)
+
 #### Help
 
 如果IDEA本地打开该项目无法自动识别Project，可以尝试右键wheel根目录下的pom.xml，
