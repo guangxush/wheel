@@ -260,3 +260,63 @@ perl -e 'print reverse <>' filename
         return false;
     }
 ```
+
+#### 根据年月日生成文件
+
+[根据年月日生成文件并追加内容](./src/main/java/GenerateFileByDate.java)
+
+为什么要做这件事情，因为[看这里](https://github.com/guangxush/ARTS/tree/master/guangxu)
+
+生成文件关键代码
+```java
+    /**
+     * 根据文件名创建文件
+     * @param filename
+     */
+    public static void createFile(String filename) {
+        File file = new File("./" + filename.substring(0, 6), filename);
+        if (file.exists()) {
+            System.out.println("文件名:" + file.getAbsolutePath());
+            System.out.println("文件大小：" + file.length());
+        } else {
+            //在.class文件所在的最上层包的父路径下
+            file.getParentFile().mkdirs();
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+```
+
+写入文本关键代码
+```java
+    /**
+     * 向指定文件写入内容
+     * @param checkFile
+     * @param stringBuffer
+     * @throws IOException
+     */
+    public static void writeTextToFile(File checkFile, StringBuffer stringBuffer) throws IOException {
+        FileWriter writer = null;
+        try {
+            // 1、检查目标文件是否存在，不存在则创建
+            if (!checkFile.exists()) {
+                checkFile.createNewFile();// 创建目标文件
+            }
+            // 2、向目标文件中写入内容
+            // FileWriter(File file, boolean append)，append为true时为追加模式，false或缺省则为覆盖模式
+            writer = new FileWriter(checkFile, false);
+            writer.append(stringBuffer);
+            writer.flush();
+            System.out.println(checkFile.getName() + "写入成功！！");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (null != writer) {
+                writer.close();
+            }
+        }
+    }
+```
