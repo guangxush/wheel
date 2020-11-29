@@ -23,7 +23,7 @@ public class SubmitCallableTask {
         Future<Integer> future = THREAD_POOL.submit(new Callable<Integer>() {
             @Override
             public Integer call() throws Exception {
-                return pollingResult.executeTask(random.nextInt(5), true);
+                return pollingResult.executeTask(random.nextInt(1000), true);
             }
         });
         try {

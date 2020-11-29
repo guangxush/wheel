@@ -25,7 +25,7 @@ public class SubmitRunnableTask {
     public void execute() {
         THREAD_POOL.submit(() -> {
             // 提交带执行的任务
-            pollingResult.executeTask(random.nextInt(5));
+            pollingResult.executeTask(random.nextInt(1000));
         });
     }
 }
