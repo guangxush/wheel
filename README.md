@@ -64,6 +64,10 @@ net nio os cache db rpc json web http udp tcp mq
 
 [业务算法小工具(抢红包)](./PlayCenter)
 
+### JVM
+
+[JVM实验](./JVM)
+
 #### Help
 
 如果IDEA本地打开该项目无法自动识别Project，可以尝试右键wheel根目录下的pom.xml，
