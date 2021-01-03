@@ -3,7 +3,7 @@
 [ThreadPoolService](./src/main/java/ThreadFactory.java)
 
 
-### 线程池的几种使用
+### 线程池提交同步或异步任务
 
 1. 提交Callable任务
 
@@ -13,9 +13,7 @@ public interface Callable<V>返回结果并且可能抛出异常的任务。实�
 
 Callable 接口类似于 Runnable，两者都是为那些其实例可能被另一个线程执行的类设计的。但是 Runnable 不会返回结果，并且无法抛出经过检查的异常。 
 
-Executors 类包含一些从其他普通形式转换成 Callable 类的实用方法
-
-Callable and Future虽然Runnable 提供了一种包裹要被在一个不同的线程中执行的代码的方式。它有一个缺陷， 不能从执行中返回结果。仅有的一种从一个Runnable 的执行中返回值的方式是把结果赋值给一个在Runnable 外部作用域中可访问的变量。
+虽然Runnable 提供了一种包裹要被在一个不同的线程中执行的代码的方式。它有一个缺陷， 不能从执行中返回结果。仅有的一种从一个Runnable 的执行中返回值的方式是把结果赋值给一个在Runnable 外部作用域中可访问的变量。
 
 Callable 在java 5中被引入， 作为Runnable 的一个对等（peer）。 Callable除了有一个Call 方法而不是Run 方法外（和Runnable）本质相同。 Call 方法有其它的能力去返回一个结果并且允许抛出检查时异常。
 
