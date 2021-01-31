@@ -14,8 +14,8 @@ public class GenerateFileByDate {
         GenerateFileByDate date = new GenerateFileByDate();
         long prefix = Long.valueOf(getTodayYearMonthDay());
         System.out.println(prefix);
-        prefix = 20210101;
-        while (prefix <= 20210131) {
+        prefix = 20210201;
+        while (prefix <= 20210228) {
             createFile(prefix + ".md");
             prefix++;
         }
@@ -47,6 +47,44 @@ public class GenerateFileByDate {
             writeAll(new File("./" + String.valueOf(prefix).substring(0, 6)), 1, stringBuffer);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * 转换readme文件
+     */
+    public static void convertReadMeFile() {
+        String before = "| [20210131](./202101/20210131.md) |[145. Binary Tree Postorder Traversal(二叉树后序遍历)](https://leetcode.com/problems/binary-tree-postorder-traversal/)||||\n" +
+                "| [20210130](./202101/20210130.md) |[144. Binary Tree Preorder Traversal(二叉树前序遍历)](https://leetcode.com/problems/binary-tree-preorder-traversal/)||||\n" +
+                "| [20210129](./202101/20210129.md) |[94. Binary Tree Inorder Traversal(二叉树中序遍历)](https://leetcode.com/problems/binary-tree-inorder-traversal/)||||\n" +
+                "| [20210128](./202101/20210128.md) |[91. Decode Ways(动态规划解码方法)](https://leetcode.com/problems/decode-ways/)||||\n" +
+                "| [20210127](./202101/20210127.md) |[48. Rotate Image(图像旋转)](https://leetcode.com/problems/rotate-image)||||\n" +
+                "| [20210126](./202101/20210126.md) |[215. Kth Largest Element in an Array(数组中第K个最大元素)](https://leetcode.com/problems/kth-largest-element-in-an-array/)||||\n" +
+                "| [20210125](./202101/20210125.md) |[887. Super Egg Drop（扔鸡蛋）](https://leetcode.com/problems/super-egg-drop/)||||\n" +
+                "| [20210124](./202101/20210124.md) |[206. Reverse Linked List（链表反转）](https://leetcode.com/problems/reverse-linked-list/)||||\n" +
+                "| [20210123](./202101/20210123.md) |[1095. Find in Mountain Array（查找山峰数组中的元素）](https://leetcode.com/problems/find-in-mountain-array/)||||\n" +
+                "| [20210122](./202101/20210122.md) |[287. Find the Duplicate Number（发现重复元素）](https://leetcode.com/problems/find-the-duplicate-number/)||||\n" +
+                "| [20210121](./202101/20210121.md) |[148. Sort List（链表排序）](https://leetcode.com/problems/sort-list/)||||\n" +
+                "| [20210120](./202101/20210120.md) |[912. Sort an Array(数组排序)](https://leetcode.com/problems/sort-an-array/)||||\n" +
+                "| [20210119](./202101/20210119.md) |[168. Excel Sheet Column Title(Excel转换)](https://leetcode.com/problems/excel-sheet-column-title/)||||\n" +
+                "| [20210118](./202101/20210118.md) |[141. Linked List Cycle(判断单链表是否有环)](https://leetcode.com/problems/linked-list-cycle/)|不用中间变量交换两个数组的值|||\n" +
+                "| [20210117](./202101/20210117.md) |[25. Reverse Nodes in k-Group(反转第K组链表)](https://leetcode.com/problems/reverse-nodes-in-k-group/)||||";
+
+        // | [20200807](./guangxu/202008/20200807.md) | [303. Range Sum Query - Immutable（数组范围内求和）](https://leetcode.com/problems/range-sum-query-immutable/) |
+        String[] beforeArray = before.split("\n");
+        StringBuffer after = new StringBuffer();
+        for(int i=0;i<beforeArray.length;i++){
+            String temp = beforeArray[i];
+            StringBuffer result = new StringBuffer();
+            for(int j = 0; j < 3; j++){
+                String str1=temp.substring(0, temp.indexOf("|")+1);
+                result.append(str1);
+                temp=temp.substring(str1.length());
+            }
+            temp = result.toString();
+            temp = temp.replace("(./", "(./guangxu/");
+            after.append(temp).append("\n");
+            System.out.println(temp);
         }
     }
 
