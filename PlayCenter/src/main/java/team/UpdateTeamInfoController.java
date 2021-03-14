@@ -24,6 +24,7 @@ public class UpdateTeamInfoController {
             if(old.getUidList() == null){
                 old.setUidList(new ArrayList<>());
             }else{
+                // 在这个地方修改，会传递到 team.AbstractOptimisticLockUpdate.changeData 中执行
                 old.getUidList().add("0001");
             }
             return old;
