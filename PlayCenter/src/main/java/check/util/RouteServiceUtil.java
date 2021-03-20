@@ -3,9 +3,7 @@ package check.util;
 import check.BizCheckServiceInvoker;
 import check.CheckRouteCallable;
 import check.RouteConfig;
-import check.model.BizCheckRequest;
-import check.model.BizResult;
-import check.model.RouteInfoResult;
+import check.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +30,12 @@ public class RouteServiceUtil {
                                                                             BizCheckRequest bizCheckRequest) {
         List<BizCheckServiceInvoker> bizCheckServiceInvokers = new ArrayList<>();
         // 根据Map以及其他配置构造参数，这里省略...
+        String checkSystem = routeInfoResultMap.get("test").getCheckSystem();
+        // 省略构造过程
+        BizCheckExecuteRequest bizCheckExecuteRequest = new BizCheckExecuteRequest();
         // 包含服务以及配置信息
+        bizCheckServiceInvokers.add(new BizCheckServiceInvoker(CheckServiceCache.getByUuid(checkSystem),
+                bizCheckExecuteRequest, routeConfig, checkSystem));
         return bizCheckServiceInvokers;
     }
 
