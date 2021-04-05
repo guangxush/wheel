@@ -77,6 +77,7 @@ public class PollingResult {
                 }
                 value = random.nextInt(10);
             }
+            // 模拟回调返回结果
             response.printSomething("SubmitCallableUnBlockTask："+ value + "是偶数！");
         } catch (InterruptedException e) {
             e.printStackTrace();
