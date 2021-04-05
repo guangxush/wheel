@@ -11,11 +11,12 @@ import java.util.Calendar;
  */
 public class GenerateFileByDate {
     public static void main(String[] args) {
+        convertReadMeFile();
         GenerateFileByDate date = new GenerateFileByDate();
         long prefix = Long.valueOf(getTodayYearMonthDay());
         System.out.println(prefix);
-        prefix = 20210301;
-        while (prefix <= 20210331) {
+        prefix = 20210401;
+        while (prefix <= 20210430) {
             createFile(prefix + ".md");
             prefix++;
         }
@@ -54,21 +55,37 @@ public class GenerateFileByDate {
      * 转换readme文件
      */
     public static void convertReadMeFile() {
-        String before = "| [20210131](./202101/20210131.md) |[145. Binary Tree Postorder Traversal(二叉树后序遍历)](https://leetcode.com/problems/binary-tree-postorder-traversal/)||||\n" +
-                "| [20210130](./202101/20210130.md) |[144. Binary Tree Preorder Traversal(二叉树前序遍历)](https://leetcode.com/problems/binary-tree-preorder-traversal/)||||\n" +
-                "| [20210129](./202101/20210129.md) |[94. Binary Tree Inorder Traversal(二叉树中序遍历)](https://leetcode.com/problems/binary-tree-inorder-traversal/)||||\n" +
-                "| [20210128](./202101/20210128.md) |[91. Decode Ways(动态规划解码方法)](https://leetcode.com/problems/decode-ways/)||||\n" +
-                "| [20210127](./202101/20210127.md) |[48. Rotate Image(图像旋转)](https://leetcode.com/problems/rotate-image)||||\n" +
-                "| [20210126](./202101/20210126.md) |[215. Kth Largest Element in an Array(数组中第K个最大元素)](https://leetcode.com/problems/kth-largest-element-in-an-array/)||||\n" +
-                "| [20210125](./202101/20210125.md) |[887. Super Egg Drop（扔鸡蛋）](https://leetcode.com/problems/super-egg-drop/)||||\n" +
-                "| [20210124](./202101/20210124.md) |[206. Reverse Linked List（链表反转）](https://leetcode.com/problems/reverse-linked-list/)||||\n" +
-                "| [20210123](./202101/20210123.md) |[1095. Find in Mountain Array（查找山峰数组中的元素）](https://leetcode.com/problems/find-in-mountain-array/)||||\n" +
-                "| [20210122](./202101/20210122.md) |[287. Find the Duplicate Number（发现重复元素）](https://leetcode.com/problems/find-the-duplicate-number/)||||\n" +
-                "| [20210121](./202101/20210121.md) |[148. Sort List（链表排序）](https://leetcode.com/problems/sort-list/)||||\n" +
-                "| [20210120](./202101/20210120.md) |[912. Sort an Array(数组排序)](https://leetcode.com/problems/sort-an-array/)||||\n" +
-                "| [20210119](./202101/20210119.md) |[168. Excel Sheet Column Title(Excel转换)](https://leetcode.com/problems/excel-sheet-column-title/)||||\n" +
-                "| [20210118](./202101/20210118.md) |[141. Linked List Cycle(判断单链表是否有环)](https://leetcode.com/problems/linked-list-cycle/)|不用中间变量交换两个数组的值|||\n" +
-                "| [20210117](./202101/20210117.md) |[25. Reverse Nodes in k-Group(反转第K组链表)](https://leetcode.com/problems/reverse-nodes-in-k-group/)||||";
+        String before = "| [20210331](./202103/20210331.md) |[39. Combination Sum(组合总和)](https://leetcode.com/problems/combination-sum/)||||\n" +
+                "| [20210330](./202103/20210330.md) |[198. House Robber(打家劫舍)](https://leetcode.com/problems/house-robber/)||||\n" +
+                "| [20210329](./202103/20210329.md) |[215. Kth Largest Element in an Array(数组中的第K个最大元素)](https://leetcode.com/problems/kth-largest-element-in-an-array/)||||\n" +
+                "| [20210328](./202103/20210328.md) |[103. Binary Tree Zigzag Level Order Traversal(二叉树之字形遍历)](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)||||\n" +
+                "| [20210327](./202103/20210327.md) |[700. Search in a Binary Search Tree(二叉树查询)](https://leetcode.com/problems/search-in-a-binary-search-tree/)||||\n" +
+                "| [20210326](./202103/20210326.md) |[206. Reverse Linked List(链表反转)](https://leetcode.com/problems/reverse-linked-list/)||||\n" +
+                "| [20210325](./202103/20210325.md) |[146. LRU Cache(LRU缓存机制)](https://leetcode.com/problems/lru-cache/)||||\n" +
+                "| [20210324](./202103/20210324.md) |[121. Best Time to Buy and Sell Stock(买卖股票的最佳时间)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)||||\n" +
+                "| [20210323](./202103/20210323.md) |[25. Reverse Nodes in k-Group(K个一组反转链表)](https://leetcode.com/problems/reverse-nodes-in-k-group/)||||\n" +
+                "| [20210322](./202103/20210322.md) |[15. 3Sum(三数之和)](https://leetcode.com/problems/3sum/)||||\n" +
+                "| [20210321](./202103/20210321.md) |[5. Longest Palindromic Substring(最长回文数)](https://leetcode.com/problems/longest-palindromic-substring/)||||\n" +
+                "| [20210320](./202103/20210320.md) |[713. Subarray Product Less Than K(乘积小于K的子数组)](https://leetcode.com/problems/subarray-product-less-than-k/)||||\n" +
+                "| [20210319](./202103/20210319.md) |[44. Wildcard Matching(通配符匹配)](https://leetcode.com/problems/wildcard-matching/)||||\n" +
+                "| [20210318](./202103/20210318.md) |[39. Combination Sum(组合总和)](https://leetcode.com/problems/combination-sum/)||||\n" +
+                "| [20210317](./202103/20210317.md) |[394. Decode String(字符串解码)](https://leetcode.com/problems/decode-string/)||||\n" +
+                "| [20210316](./202103/20210316.md) |[88. Merge Sorted Array(合并两个有序数组)](https://leetcode.com/problems/merge-sorted-array/)||||\n" +
+                "| [20210315](./202103/20210315.md) |[449. Serialize and Deserialize BST(二叉树的序列化与反序列化)](https://leetcode.com/problems/serialize-and-deserialize-bst/)|||好好准备|\n" +
+                "| [20210314](./202103/20210314.md) |[3. Longest Substring Without Repeating Characters(无重复字符的最长子串)](https://leetcode.com/problems/longest-substring-without-repeating-characters/)||||\n" +
+                "| [20210313](./202103/20210313.md) |[704. Binary Search(二分查找)](https://leetcode.com/problems/binary-search/)||||\n" +
+                "| [20210312](./202103/20210312.md) |[701. Insert into a Binary Search Tree(二叉搜索树的插入)](https://leetcode.com/problems/insert-into-a-binary-search-tree/)||||\n" +
+                "| [20210311](./202103/20210311.md) |[1155. Number of Dice Rolls With Target Sum(掷骰子的N种方法-DP)](https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/)||||\n" +
+                "| [20210310](./202103/20210310.md) |[739. Daily Temperatures(每日温度)](https://leetcode.com/problems/daily-temperatures/)||||\n" +
+                "| [20210309](./202103/20210309.md) |[328. Odd Even Linked List(奇偶链表)](https://leetcode.com/problems/odd-even-linked-list/)||||\n" +
+                "| [20210308](./202103/20210308.md) |[150. Evaluate Reverse Polish Notation(逆波兰表达式求值)](https://leetcode.com/problems/evaluate-reverse-polish-notation/)||||\n" +
+                "| [20210307](./202103/20210307.md) |[84. Largest Rectangle in Histogram(柱状图最大矩形面积)](https://leetcode.com/problems/largest-rectangle-in-histogram/)||||\n" +
+                "| [20210306](./202103/20210306.md) |[877. Stone Game(拿石头)](https://leetcode.com/problems/stone-game/)||||\n" +
+                "| [20210305](./202103/20210305.md) |[46. Permutations(全排列)](https://leetcode.com/problems/permutations/)||||\n" +
+                "| [20210304](./202103/20210304.md) |[72. Edit Distance(编辑距离)](https://leetcode.com/problems/edit-distance/)||||\n" +
+                "| [20210303](./202103/20210303.md) |[102. Binary Tree Level Order Traversal(二叉树层次遍历)](https://leetcode.com/problems/binary-tree-level-order-traversal/)||||\n" +
+                "| [20210302](./202103/20210302.md) |[1. Two Sum(两数之和)](https://leetcode.com/problems/two-sum/)||||\n" +
+                "| [20210301](./202103/20210301.md) |[119. Pascal's Triangle II(杨辉三角2)](https://leetcode.com/problems/pascals-triangle-ii/)||||";
 
         // | [20200807](./guangxu/202008/20200807.md) | [303. Range Sum Query - Immutable（数组范围内求和）](https://leetcode.com/problems/range-sum-query-immutable/) |
         String[] beforeArray = before.split("\n");
