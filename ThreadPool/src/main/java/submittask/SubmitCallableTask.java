@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.concurrent.*;
 
 /**
- * 提交回调任务
+ * 提交同步回调任务
  *
  * @author: guangxush
  * @create: 2020/11/29

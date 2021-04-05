@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 提交任务
+ * 提交同步任务
  *
  * @author: guangxush
  * @create: 2020/11/29
