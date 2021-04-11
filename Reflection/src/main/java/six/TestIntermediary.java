@@ -10,7 +10,7 @@ public class TestIntermediary {
     public static void main(String[] args) {
 
         // 基本的代理类
-        OuterClass outerClass = new OuterClass(1L, "shgx", 1, 23.5, new Date());
+        OuterClass outerClass = new OuterClass(1L, "Tom", 1, 23.5, new Date());
         // BeanUtil
         InnerClass innerClassOne = new InnerClass();
         CopyUtil.getClassByBeanUtil(innerClassOne, outerClass);
