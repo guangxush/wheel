@@ -27,6 +27,8 @@
         <module>HappyParse</module>
         <module>PlayCenter</module>
         <module>JVM</module>
+        <module>Template</module>
+        <module>Factory</module>
     </modules>
 
 
