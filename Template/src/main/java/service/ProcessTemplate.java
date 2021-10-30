@@ -1,3 +1,5 @@
+package service;
+
 /**
  * 处理器模板
  *
