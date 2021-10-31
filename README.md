@@ -71,6 +71,14 @@ net nio os cache db rpc json web http udp tcp mq
 
 [Design Patterns](https://github.com/guangxush/DesignPatterns)
 
+### Spring工厂模式
+
+[Factory](./Factory)
+
+### Spring模板方法
+
+[Template](./Template)
+
 #### Help
 
 如果IDEA本地打开该项目无法自动识别Project，可以尝试右键wheel根目录下的pom.xml，
