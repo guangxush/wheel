@@ -29,6 +29,7 @@
         <module>JVM</module>
         <module>Template</module>
         <module>Factory</module>
+        <module>highAvailable</module>
     </modules>
 
 
