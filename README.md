@@ -79,6 +79,10 @@ net nio os cache db rpc json web http udp tcp mq
 
 [Template](./Template)
 
+### 高并发数据处理
+
+[HighAvailable](./HighAvailable)
+
 #### Help
 
 如果IDEA本地打开该项目无法自动识别Project，可以尝试右键wheel根目录下的pom.xml，
