@@ -106,6 +106,7 @@ public class LRUCache {
     }
 
 
+
     public static void main(String[] args) {
         LRUCache cache = new LRUCache(5);
         cache.accessData(1);
@@ -114,6 +115,7 @@ public class LRUCache {
         cache.accessData(4);
         cache.accessData(5);
 
+        // 测试输出
         System.out.println(cache);
 
         cache.accessData(3);
