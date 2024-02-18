@@ -15,8 +15,8 @@ public class GenerateFileByDate {
         GenerateFileByDate date = new GenerateFileByDate();
         long prefix = Long.valueOf(getTodayYearMonthDay());
         System.out.println(prefix);
-        prefix = 20231201;
-        while (prefix <= 20231230) {
+        prefix = 20240701;
+        while (prefix <= 20240731) {
             createFile(prefix + ".md");
             prefix++;
         }

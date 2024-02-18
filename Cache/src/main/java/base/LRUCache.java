@@ -3,10 +3,11 @@ package base;
 import java.util.Arrays;
 
 /**
- * 基本的LRU缓存（数组实现）
+ * LRU缓存（最近最久未使用-Least Recently Used）
+ * LRU 是基于页面最后一次被使用的时间来判断的。如果一个页面自最后一次被使用时经过了足够长的时间，那么它将被替换掉，即使它在过去的一段时间内曾被频繁使用。这意味着LRU算法倾向于保留最近最少使用的页面。
  *
  * @author: guangxush
- * @create: 2023/12/17
+ * @create: 2024/02/18
  */
 public class LRUCache {
 
@@ -125,5 +126,4 @@ public class LRUCache {
         System.out.println(cache);
 
     }
-
 }
