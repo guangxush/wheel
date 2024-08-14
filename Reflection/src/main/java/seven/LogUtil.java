@@ -11,15 +11,45 @@ import static seven.LogConstant.C_SUFFIX;
  */
 public class LogUtil {
 
+    /**
+     * 线程唯一ID
+     */
+    private static final String TRACE_UUID = "traceUuid";
+
+    /**
+     * 输出标准的日志信息
+     * @param log
+     * @param format
+     * @param args
+     */
     public static void info(final Log log, final String format, final Object... args){
         if(log.isInfoEnabled()){
             log.info(LogStringUtil.format(format, args));
         }
     }
 
+    /**
+     * 输出标准的日志信息
+     * @param log
+     * @param format
+     * @param args
+     */
+    public static void warn(final Log log, final String format, final Object... args){
+        if(log.isInfoEnabled()){
+            log.warn(LogStringUtil.format(format, args));
+        }
+    }
+
+    /**
+     * 输出错误信息
+     * @param log
+     * @param e
+     * @param args
+     */
     public static void error(final Log log, final Throwable e, final Object... args){
         log.error(getLogString(args), e);
     }
+
 
     public static String getLogString(final Object... objects){
         if(objects == null){
