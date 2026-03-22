@@ -10,25 +10,25 @@
 
 | 模块 | 说明 | 目录 |
 |---|---|---|
-| JSONParse | 自定义 JSON 解析器实现 | `./JSONParse` |
-| MQ | 自研消息队列实现 | `./MQ` |
-| Netty | 基于 Netty 的网络模型 | `./Netty` |
-| NIO | IO 多种模型实现与对比 | `./NIO` |
-| ORM | 根据 SQL 生成 Java 实体与绑定 | `./ORM` |
-| PageReplace | CPU缓存置换算法 | `./PageReplace` |
-| RPC | 简易 RPC 框架 | `./RPC` |
-| ThreadPool | 自定义线程池实现 | `./ThreadPool` |
-| ToYaml | Properties 转 YAML 工具 | `./ToYaml` |
-| Cache | ThreadLocal 查询缓存 | `./Cache` |
-| Instrument | Java Instrument Agent 实现 | `./Instrument` |
-| Annotation | 注解处理与元编程实践 | `./Annotation` |
-| SpringCore | Spring 底层机制解析 | `./SpringCore` |
-| HappyParse | 各类解析小工具集合 | `./HappyParse` |
-| PlayCenter | 业务算法练习（如抢红包） | `./PlayCenter` |
-| JVM | JVM 实验探索 | `./JVM` |
-| Factory | Spring 工厂模式实现 | `./Factory` |
-| Template | Spring 模板方法实现 | `./Template` |
-| HighAvailable | 高并发处理策略与实现 | `./HighAvailable` |
+| JSONParse | 自定义 JSON 解析器实现 | [JSONParse/README.md](JSONParse/README.md) |
+| MQ | 自研消息队列实现 | [MQ/README.md](MQ/README.md) |
+| Netty | 基于 Netty 的网络模型 | [Netty/README.md](Netty/README.md) |
+| NIO | IO 多种模型实现与对比 | [NIO/README.md](NIO/README.md) |
+| ORM | 根据 SQL 生成 Java 实体与绑定 | [ORM/README.md](ORM/README.md) |
+| PageReplace | CPU缓存置换算法 | [PageReplace/README.md](PageReplace/README.md) |
+| RPC | 简易 RPC 框架 | [RPC/README.md](RPC/README.md) |
+| ThreadPool | 自定义线程池实现 | [ThreadPool/README.md](ThreadPool/README.md) |
+| ToYaml | Properties 转 YAML 工具 | [ToYaml/README.md](ToYaml/README.md) |
+| Cache | ThreadLocal 查询缓存 | [Cache/README.md](Cache/README.md) |
+| Instrument | Java Instrument Agent 实现 | [Instrument/README.md](Instrument/README.md) |
+| Annotation | 注解处理与元编程实践 | [Annotation/README.md](Annotation/README.md) |
+| SpringCore | Spring 底层机制解析 | [SpringCore/README.md](SpringCore/README.md) |
+| HappyParse | 各类解析小工具集合 | [HappyParse/README.md](HappyParse/README.md) |
+| PlayCenter | 业务算法练习（如抢红包） | [PlayCenter/README.md](PlayCenter/README.md) |
+| JVM | JVM 实验探索 | [JVM/README.md](JVM/README.md) |
+| Factory | Spring 工厂模式实现 | [Factory/README.md](Factory/README.md) |
+| Template | Spring 模板方法实现 | [Template/README.md](Template/README.md) |
+| HighAvailable | 高并发处理策略与实现 | [HighAvailable/README.md](HighAvailable/README.md) |
 
 ## 快速开始
 

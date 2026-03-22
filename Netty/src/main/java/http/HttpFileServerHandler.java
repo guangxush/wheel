@@ -13,7 +13,6 @@ import static io.netty.handler.codec.http.HttpResponseStatus.METHOD_NOT_ALLOWED;
 import static io.netty.handler.codec.http.HttpResponseStatus.NOT_FOUND;
 import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
-import static sun.tools.jconsole.Messages.CONNECTION;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -101,7 +100,7 @@ public class HttpFileServerHandler extends
         setContentLength(response, fileLength);
         setContentTypeHeader(response, file);
         if (isKeepAlive(request)) {
-            response.headers().set(CONNECTION, KEEP_ALIVE);
+            response.headers().set("Connection", "keep-alive");
         }
         ctx.write(response);
         ChannelFuture sendFileFuture;
