@@ -1,3 +1,31 @@
+# Reflection
+
+> 这是 wheel/Reflection 模块的说明。
+> 已保留原 README 内容，并添加快速导航与贡献说明。
+
+## 模块亮点
+
+- 适合快速上手，覆盖核心功能。
+- 原始实现保留在文末。
+- 单测可运行：`cd /workspaces/wheel/Reflection && mvn test`。
+
+## 快速开始
+
+```bash
+cd /workspaces/wheel/Reflection
+mvn test
+```
+
+## 贡献建议
+
+- 可先阅读如下“原始 README 内容”。
+- 需要功能补充时，建议先开 issue 讨论。
+- 提交 PR 时请保持代码风格。
+
+---
+
+## 原始 README 内容（保留）
+
 ## 反射
 反射是Java语言的重要特性，它允许程序运行时进行自我检查，也允许对内部的成员
 进行操作，能够实现在运行时对类进行装载，使程序运行时更加灵活，但是也有注意正确使用
@@ -690,3 +718,5 @@ public @interface LogAnnotation {
 }
 ```
 不在展开描述
+
+---

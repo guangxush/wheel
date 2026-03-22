@@ -1,0 +1,68 @@
+# ToYaml
+
+> 这是 wheel/ToYaml 模块的说明。
+> 已保留原 README 内容，并添加快速导航与贡献说明。
+
+## 模块亮点
+
+- 适合快速上手，覆盖核心功能。
+- 原始实现保留在文末。
+- 单测可运行：`cd /workspaces/wheel/ToYaml && mvn test`。
+
+## 快速开始
+
+```bash
+cd /workspaces/wheel/ToYaml
+mvn test
+```
+
+## 贡献建议
+
+- 可先阅读如下“原始 README 内容”。
+- 需要功能补充时，建议先开 issue 讨论。
+- 提交 PR 时请保持代码风格。
+
+---
+
+## 原始 README 内容（保留）
+
+# ToYaml
+
+Properties 转 YAML 工具，支持多种格式与兼容性。
+
+## 模块简介
+
+Properties 转 YAML 工具，支持多种格式与兼容性。
+
+## 功能亮点
+
+- 纯 Java 实现，适合学习与实验。
+- 核心场景覆盖：快速上手、源码可读、可复用。
+- 结合单元测试验证运行效果（请查看模块内测试目录）。
+
+## 快速开始
+
+```bash
+# 进入项目目录
+cd /workspaces/wheel/ToYaml
+
+# 运行测试
+mvn test
+```
+
+## 推荐阅读
+
+- 关注 `wheel` 根项目 README，查看完整模块导航。
+- 拉取最新改动：`git pull origin master`。
+
+## 贡献指南
+
+- 欢迎提交 PR 和 Issue。
+- 若希望扩展功能，请先在 Issue 中讨论需求。
+- 请保持代码风格一致，并补充大于 80% 的单测覆盖。
+
+---
+
+> 如果你觉得有帮助，欢迎 `⭐️` 本仓库并转发给更多开发者。
+
+---

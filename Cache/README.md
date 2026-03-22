@@ -1,3 +1,31 @@
+# Cache
+
+> 这是 wheel/Cache 模块的说明。
+> 已保留原 README 内容，并添加快速导航与贡献说明。
+
+## 模块亮点
+
+- 适合快速上手，覆盖核心功能。
+- 原始实现保留在文末。
+- 单测可运行：`cd /workspaces/wheel/Cache && mvn test`。
+
+## 快速开始
+
+```bash
+cd /workspaces/wheel/Cache
+mvn test
+```
+
+## 贡献建议
+
+- 可先阅读如下“原始 README 内容”。
+- 需要功能补充时，建议先开 issue 讨论。
+- 提交 PR 时请保持代码风格。
+
+---
+
+## 原始 README 内容（保留）
+
 ## 使用ThreadLocal做查询缓存
 
 ThreadLocal是一个本地线程副本变量工具类。主要用于将私有线程和该线程存放的副本对象做一个映射，各个线程之间的变量互不干扰。
@@ -122,3 +150,4 @@ Student{uid='0789128', name='shgx', age=22}
 当然缓存的形式有很多种，尤其Spring这种应用，用到缓存的地方会很多，这里可以参考Guava缓存进行实践：
 
 https://github.com/guangxush/SpringBoot_GuavaCache
+---
